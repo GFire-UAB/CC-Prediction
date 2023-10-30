@@ -103,7 +103,7 @@ The following graph shows how the main bulk of the program (block preprocessing 
 
 ![Block_Execution](https://github.com/pau-ventrod/GFire-CC-prediction/assets/105445981/4aa9f00a-1e0d-4597-b252-246910e8b895)
 
-We have noticed that, as input size grows, tiff preprocessing remains constant, which gives all the concernedness of time execution to the block preprocessing part. Note also that paralelizing has a huge impact to final executing time, decreasing the execution time for 9 blocks of 10 points/m^2 density from 20 minutes to 3 minutes by using 9 CPUs.
+We have noticed that, as input size grows, tiff preprocessing remains constant, which gives all the concernedness of time execution to the block preprocessing part. Note also that paralelizing has a huge impact to final executing time, decreasing it from 20 minutes to 3 minutes by using 9 CPUs for an input data consisting of 9 blocks with 10 points/m^2 density.
 
 ### Members of the team:
 
