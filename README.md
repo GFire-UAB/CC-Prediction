@@ -39,6 +39,7 @@ Folders will be displayed in **bold** and scripts in *italic*.
         - **model**: Contains the trained imputer, scaler and xgb (model) used.
         - **vizz**: Contains the coordinates of the blocks used for traning and test to check their distribution along Catalonia.
 - **Updated Slides**: Contains slides of the progress followed week by week with the updates.
+- **env**: Contains the packages required to run the code.
 
 ### Workflow
 For a given biophysical variable (such as Canopy Cover), the workflow through scripts will be the following:
