@@ -88,6 +88,20 @@ The following image shows the comparison between all the catalonian CC and the p
 
 On a higher scale, the errors are much harder to spot.
 
+## Error analysis
+
+The following confusion matrix shows the percentage of classified points according to the predicted versus real values. The optimal situation would be a completely diagonal matrix.
+
+![WhatsApp Image 2023-10-30 at 17 03 05](https://github.com/GFire-UAB/CC-Prediction/assets/105445981/33ea5c01-47e4-47bd-88d6-b9af9efc1eed)
+
+As we can see, most of the predictions fall into the matrix's diagonal and near it, with a clear tencency to underestimate, which is good as our groundtruth came from an overestimation of the reality. Note aswell that 56% of the classifications are well-classified into a low range (CC belonging to 0-10%), which might aswell result in the model tending to underestimate.
+
+Analysing the absolute valued error of our predictions:
+
+![WhatsApp Image 2023-10-30 at 18 12 30](https://github.com/GFire-UAB/CC-Prediction/assets/105445981/81f92f5b-e760-45fb-8562-9810c24b7e24)
+
+More than 62% of the predictions have a very low error (<5%), while the error is <20% in more than the 90% of the cases. Beyond the 95% of the cases the error will be upper bounded by 30%.
+
 ## Script execution time
 
 A batch of tests have been perfomed in order to compare how did the processing behave on a different density of points. 
