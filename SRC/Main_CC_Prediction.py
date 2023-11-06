@@ -28,8 +28,8 @@ from ML_utils.block_preprocessing_CC import *
 from ML_utils.block_preprocessing_merge import *
 from ML_utils.LandUse_preprocessing import *
 
-
 # Others / utils
+import zipfile
 import time
 import joblib
 from multiprocessing import Process, Queue, cpu_count
@@ -66,7 +66,13 @@ def Main_CC_Prediction(input_blocks_path, output_blocks_path, output_type, user_
     imputer_path = join(results_path,'model', 'imputer.joblib')
     scaler_path = join(results_path, 'model', 'scaler.joblib')
     xgb_path = join(results_path, 'model','xgb.joblib')
-    output_path = join(results_path, 'predictions')
+
+
+    # Decompressing xgb
+    if not isfile(xgb_path):
+        with zipfile.ZipFile(join(results_path, 'model','xgb.zip'), 'r') as zip_ref:
+            zip_ref.extractall(join(results_path, 'model'))
+
 
     all_blockfiles = [join(blocks_path, f) for f in listdir(blocks_path) if isfile(join(blocks_path, f)) and f[-4:] == '.laz']
     blockfiles = np.array(all_blockfiles)
